@@ -14,10 +14,22 @@ RSpec.describe App do
     expect(last_response.body).to include('Welcome Home')
   end
 
-  it 'responds for secret page' do
+  it 'responds for GET secret page' do
     get '/secret'
     expect(last_response).to be_ok
     expect(last_response.body).to include('Welcome to secret place')
+  end
+
+  it 'responds for POST secret page' do
+    post '/secret'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('Welcome to secret place unknown person')
+  end
+
+  it 'responds for POST secret page with param provided' do
+    post '/secret', name: 'John'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('Welcome to secret place John')
   end
 
   it 'responds 404 for unexisting page' do
