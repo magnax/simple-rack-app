@@ -1,12 +1,12 @@
 module Endpoints
   class Secret < Base
     def index
-      [200, {}, ['Welcome to secret place']]
+      render_response 'Welcome to secret place', headers: { "content-type" => "text/html" }
     end
 
     def create
       name = params['name'] || 'unknown person'
-      [200, {}, ["Welcome to secret place #{name}"]]
+      render_response "Welcome to secret place #{name}"
     end
   end
 end

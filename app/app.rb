@@ -7,6 +7,6 @@ class App
   def call(env)
     route(Rack::Request.new(env))
   rescue => ex
-    [500, {}, ['Internal Server Error']]
+    [500, { "Content-Type" => "text/plain" }, ['Internal Server Error']]
   end
 end

@@ -1,11 +1,11 @@
 module Endpoints
   class Home < Base
     def index
-      [200, {}, ['Welcome Home']]
+      render_response 'Welcome Home'
     end
 
     def home
-      [200, {}, ['Welcome Home']]
+      render_response 'Welcome Home'
     end
   end
 end
