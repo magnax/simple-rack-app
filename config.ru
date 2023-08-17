@@ -1,5 +1,5 @@
 # config file for rack app
 
-run do
-  [200, {}, ["Hello World"]]
-end
+require_relative 'app/app.rb'
+
+run App.new
