@@ -1,6 +1,10 @@
 module Endpoints
-  class Home
-    def call
+  class Home < Base
+    def index
+      [200, {}, ['Welcome Home']]
+    end
+
+    def home
       [200, {}, ['Welcome Home']]
     end
   end

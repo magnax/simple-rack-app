@@ -5,7 +5,8 @@ class App
   include Router
 
   def call(env)
-    req = Rack::Request.new(env)
-    route(req.path)
+    route(Rack::Request.new(env))
+  rescue => ex
+    [500, {}, ['Internal Server Error']]
   end
 end
