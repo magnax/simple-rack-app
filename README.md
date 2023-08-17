@@ -19,6 +19,11 @@ $ rackup -p 9293                                                  # listen on di
 $ rackup -s thin                                                  # use different web server
 $ BASIC_AUTH_USERNAME=admin BASIC_AUTH_PASSWORD=secret rackup     # set env variables used for authentication
 ```
+### Using env variables
+
+- Apart from BASIC_AUTH_USERNAME/BASIC_AUTH_PASSWORD you can also set DEBUG variable to show full errors:
+
+`DEBUG=yes rackup`
 
 ## Endpoints:
 
