@@ -14,7 +14,18 @@ Just run `bundle install` as there is Gemfile included.
 ## Usage:
 
 ```
-$ rackup             # default configuration on port 9292
-$ rackup -p 9293     # listen on different port
-$ rackup -s thin     # use different web server
+$ rackup                                                          # default configuration on port 9292
+$ rackup -p 9293                                                  # listen on different port
+$ rackup -s thin                                                  # use different web server
+$ BASIC_AUTH_USERNAME=admin BASIC_AUTH_PASSWORD=secret rackup     # use different web server
 ```
+
+## Endpoints:
+
+- /
+- /home
+- /secret (password protected using Rack::Auth::Basic)
+
+## Tests:
+
+`rspec`
