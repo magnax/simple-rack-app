@@ -1,11 +1,11 @@
 # main application
+require_relative './router'
+
 class App
+  include Router
+
   def call(env)
     req = Rack::Request.new(env)
-    if req.path == '/'
-      [200, {}, ['Proper path!']]
-    else
-      [404, {}, ['Page not found']]
-    end
+    route(req.path)
   end
 end
